@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Clase 1</title>
+</head>
+<body>
+    
+    <h1>¡Hola!</h1>
+    <h2>Algunas preguntitas simples para practicar</h2>
+    <h3>Empezamos?</h3>
+    <ol>
+        <li>Te preguntaremos su nombre</li>
+        <li>Luego un número para sumarlo con uno que nosotros elegimos previamente</li>
+        <li>Le pediremos que ingrese su primero apellido</li>
+        <li>Y por ultimo su segundo apellido</li>
+        <li>¡Listo! Recibira un cordial saludo por su nombre completo</li>
+        <li>Ah! Sin olvidar que en consola tendrá un saludo menos formal y la suma de su numero</li>
+    </ol>
+    <h3>¡Gracias!</h3>
+    
+    <script>
+
+        const saludo = "¡Hola, ";
+        const nombre = prompt("Ingrese su nombre: ");
+        console.log(saludo + nombre + "!");
+
+        const numero = 33;
+        const numeroIngresado = parseInt(prompt("Ingrese un numero: "));
+        console.log("Su numero más 33 es: "+(numero + numeroIngresado));
+
+        const apellido1 = prompt("Ingrese su primer apellido: ");
+        const apellido2 = prompt("Ingrese su segundo apellido: ");
+        alert(saludo + nombre + " " + apellido1 + " " + apellido2 + "!");
+
+    </script>
+</body>
+</html>
