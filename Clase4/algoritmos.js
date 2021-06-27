@@ -1,10 +1,17 @@
-let promedioFinal = 0;
 
-function promedio(primerEscrito, primerParcial, segundoEscrito, segundoParcial, tercerEscrito){
-    let promedioParciales = (primerParcial+segundoParcial)*0.75;
-    let promedioEscritos = (primerEscrito + segundoEscrito + tercerEscrito)*0.25;
-    return promedioFinal = (promedioEscritos + promedioParciales)/2;
-    alert(promedioFinal);
+const primerEscrito = parseInt(prompt("Ingrese la nota del primer escrito"));
+const primerParcial = parseInt(prompt("Ingrese la nota del primer parcial"));
+const segundoEscrito = parseInt(prompt("Ingrese la nota del segundo escrito"));
+const segundoParcial = parseInt(prompt("Ingrese la nota del segundo parcial"));
+const tercerEscrito = parseInt(prompt("Ingrese la nota del tercer escrito"));
+const faltas = parseInt(prompt("Ingrese la cantidad de faltas que tuvo el alumno"));
+
+let promedioFinal = 0;
+let promedioParciales = (primerParcial+segundoParcial)*0.75;
+let promedioEscritos = (primerEscrito + segundoEscrito + tercerEscrito)*0.25;
+
+function promedio(promedioEscritos, promedioParciales){
+    return (promedioEscritos + promedioParciales)/2;
 }
 
 function devolucion(promedioFinal, faltas){
@@ -28,13 +35,6 @@ function devolucion(promedioFinal, faltas){
             break;
     }
 }
-
-const primerEscrito = parseInt(prompt("Ingrese la nota del primer escrito"));
-const primerParcial = parseInt(prompt("Ingrese la nota del primer parcial"));
-const segundoEscrito = parseInt(prompt("Ingrese la nota del segundo escrito"));
-const segundoParcial = parseInt(prompt("Ingrese la nota del segundo parcial"));
-const tercerEscrito = parseInt(prompt("Ingrese la nota del tercer escrito"));
-const faltas = parseInt(prompt("Ingrese la cantidad de faltas que tuvo el alumno"));
 
 alert("El promedio final del alumno es: " + promedio(primerEscrito, primerParcial, segundoEscrito, segundoParcial, tercerEscrito));
 alert("La devolución del alumno es: " + devolucion(promedioFinal, faltas));
