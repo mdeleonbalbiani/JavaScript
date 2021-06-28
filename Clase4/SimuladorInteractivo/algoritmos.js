@@ -11,7 +11,8 @@ let promedioParciales = (primerParcial+segundoParcial)*0.75;
 let promedioEscritos = (primerEscrito + segundoEscrito + tercerEscrito)*0.25;
 
 function promedio(promedioEscritos, promedioParciales){
-    return (promedioEscritos + promedioParciales)/2;
+    promedioFinal = (promedioEscritos + promedioParciales)/2;
+    return promedioFinal;
 }
 
 function devolucion(promedioFinal, faltas){
@@ -36,5 +37,5 @@ function devolucion(promedioFinal, faltas){
     }
 }
 
-alert("El promedio final del alumno es: " + promedio(primerEscrito, primerParcial, segundoEscrito, segundoParcial, tercerEscrito));
+alert("El promedio final del alumno es: " + promedio(promedioEscritos, promedioParciales));
 alert("La devolución del alumno es: " + devolucion(promedioFinal, faltas));
