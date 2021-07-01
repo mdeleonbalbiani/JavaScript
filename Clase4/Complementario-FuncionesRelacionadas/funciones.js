@@ -1,20 +1,15 @@
-let precio = 0;
-let precioConImpuesto = 0;
-
+precio = 0;
 function pedirPrecio(){
     precio = parseInt(prompt("Ingrese el precio del producto:"));
 }
 
-function calcularIVA(precio){
-    let impuesto = precio*0.22;
-    precioConImpuesto = (precio+impuesto);
-    return precioConImpuesto;
-}
+const iva = precio => precio * 0.22;
+
+let precioConImpuesto = (precio,iva) => precio+iva;
 
 function mostrarPrecioConImpuesto(precioConImpuesto){
-    alert("El precio final de su producto es: "+precioConImpuesto);
+    alert("El precio de su producto con impuestos agregados es "+precioConImpuesto);
 }
 
 pedirPrecio();
-calcularIVA(precio);
-mostrarPrecioConImpuesto(precioConImpuesto);
+mostrarPrecioConImpuesto(precioConImpuesto(precio, iva(precio)));
