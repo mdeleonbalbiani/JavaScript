@@ -70,5 +70,5 @@ const alumno1 = new promedio (primerEscrito, primerParcial, segundoEscrito, segu
 alumno1.calculoPromedio(primerEscrito, primerParcial, segundoEscrito, segundoParcial, tercerEscrito);
 //Devoluciones al user
 alert("El promedio final del alumno es: " + alumno1.promedioFinal);
-alert("La devolución del alumno es: " + alumno1.devolucion(alumno1.promedioFinal, alumno1.faltas));
+alumno1.devolucion(alumno1.promedioFinal, alumno1.faltas);
 
