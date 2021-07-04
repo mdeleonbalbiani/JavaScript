@@ -1,5 +1,5 @@
 
-class promedio{
+class Promedio{
     datos(primerEscrito, primerParcial, segundoEscrito, segundoParcial, tercerEscrito, faltas) {
         this.primerEscrito = primerEscrito;
         this.primerParcial = primerParcial;
@@ -14,28 +14,22 @@ class promedio{
         let promedioEscritos = (primerEscrito + segundoEscrito + tercerEscrito)*0.25;
         this.promedioFinal = (promedioEscritos + promedioParciales)/2;
     }
-    devolucion(promedioFinal, faltas){
-        switch (true) {
-            case faltas>22:
-                alert("El alumno debe recursar la materia, no llego a las asistencias minimas necesarias");
-                break;
-            case promedioFinal<7 && promedioFinal>=4:
+    devolucion(promedioFinal, faltas) {
+        if (faltas < 22) {
+            if (promedioFinal < 7 && promedioFinal >= 4) {
                 alert("El alumno debe rendir examen en diciembre");
-                break;
-            
-            case promedioFinal<4:
-                alert("El alumno debe rendir examen en febrero");
-                break;
-    
-            case promedioFinal>7:
-                    alert("El alumno aprobó la materia con nota " + promedioFinal);
-                    break;
-            default:
-                alert("Error");
-                break;
+            } else if (promedioFinal < 4) {
+            alert("El alumno debe rendir examen en febrero");
+            } else if (promedioFinal > 7){
+                alert("El alumno aprobó la materia con nota " + promedioFinal);
+            }
+        }else{
+            alert("El alumno debe recursar la materia, no llego a las asistencias minimas necesarias");
         }
+        
     }
 }
+
 
 function validacionFaltas(faltas){
     while ((isNaN(faltas)) || (faltas<0) || (faltas==="")) {
@@ -66,7 +60,7 @@ tercerEscrito = validacionNotas(tercerEscrito);
 let faltas = parseInt(prompt("Ingrese la cantidad de faltas que tuvo el alumno"));
 faltas = validacionFaltas(faltas);
 
-const alumno1 = new promedio (primerEscrito, primerParcial, segundoEscrito, segundoParcial, tercerEscrito, faltas);
+const alumno1 = new Promedio (primerEscrito, primerParcial, segundoEscrito, segundoParcial, tercerEscrito, faltas);
 alumno1.calculoPromedio(primerEscrito, primerParcial, segundoEscrito, segundoParcial, tercerEscrito);
 //Devoluciones al user
 alert("El promedio final del alumno es: " + alumno1.promedioFinal);
