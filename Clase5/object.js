@@ -1,4 +1,3 @@
-
 class Promedio{
     datos(primerEscrito, primerParcial, segundoEscrito, segundoParcial, tercerEscrito, faltas) {
         this.primerEscrito = primerEscrito;
@@ -63,4 +62,3 @@ alumno1.calculoPromedio(primerEscrito, primerParcial, segundoEscrito, segundoPar
 //Devoluciones al user
 alert("El promedio final del alumno es: " + alumno1.promedioFinal);
 alumno1.devolucion(alumno1.promedioFinal, alumno1.faltas);
-
