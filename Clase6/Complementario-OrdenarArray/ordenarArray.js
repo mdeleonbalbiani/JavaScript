@@ -16,15 +16,12 @@ class Farmacia {
 }
 
 const farmacia1 = new Farmacia();
-let precio = 150;
-
-while (farmacia1.productos.length != 5) {
-    farmacia1.agregarProducto(new Medicamento('Paracetamol', precio));
-    precio += 50;
-}
 
 farmacia1.agregarProducto(new Medicamento('Aspirina', 500));
 farmacia1.agregarProducto(new Medicamento('Buscapina', 678));
+farmacia1.agregarProducto(new Medicamento('Paracetamol', 100));
+farmacia1.agregarProducto(new Medicamento('Omeprazol', 440));
+farmacia1.agregarProducto(new Medicamento('Sabutamol', 265));
 
 farmacia1.productos.sort((item1,item2) => {
     return item2.precio - item1.precio;
