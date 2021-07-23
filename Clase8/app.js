@@ -65,8 +65,9 @@ function mostrar(e) {
     let tercerEscrito = document.getElementById("tercerEscrito").value;
     let faltas = document.getElementById("faltas").value;
     alumnos.push(new Promedio(nombre, primerEscrito, primerParcial, segundoEscrito, segundoParcial, tercerEscrito, faltas));
-    alumnos.calculoPromedio();
+    
     alumnos.forEach(alumnos => {
+        alumnos.calculoPromedio();
         let p1 = document.createElement("p")
         p1.textContent = `${alumnos.nombre}`
         let p2 = document.createElement("p")
