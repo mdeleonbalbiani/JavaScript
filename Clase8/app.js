@@ -3,12 +3,12 @@ let alumnos = [];
 class Promedio{
     constructor(nombre, primerEscrito, primerParcial, segundoEscrito, segundoParcial, tercerEscrito, faltas) {
         this.nombre = nombre;
-        this.primerEscrito = primerEscrito;
-        this.primerParcial = primerParcial;
-        this.segundoEscrito = segundoEscrito;
-        this.segundoParcial = segundoParcial;
-        this.tercerEscrito = tercerEscrito;
-        this.faltas = faltas;
+        this.primerEscrito = Number(primerEscrito);
+        this.primerParcial = Number(primerParcial);
+        this.segundoEscrito = Number(segundoEscrito);
+        this.segundoParcial = Number(segundoParcial);
+        this.tercerEscrito = Number(tercerEscrito);
+        this.faltas = Number(faltas);
         this.promedioFinal;
     }
     calculoPromedio(){
@@ -58,12 +58,19 @@ function validacionNombre(nombre){
 function mostrar(e) {
     e.preventDefault()
     let nombre = document.getElementById("nombre").value;
+    nombre = validacionNombre(nombre);
     let primerEscrito = document.getElementById("primerEscrito").value;
+    primerEscrito = validacionNotas(primerEscrito);
     let primerParcial = document.getElementById("primerParcial").value;
+    primerParcial = validacionNotas(primerParcial);
     let segundoEscrito = document.getElementById("segundoEscrito").value;
+    segundoEscrito = validacionNotas(segundoEscrito);
     let segundoParcial = document.getElementById("segundoParcial").value;
+    segundoParcial = validacionNotas(segundoParcial);
     let tercerEscrito = document.getElementById("tercerEscrito").value;
+    tercerEscrito = validacionNotas(tercerEscrito);
     let faltas = document.getElementById("faltas").value;
+    faltas = validacionFaltas(faltas);
     alumnos.push(new Promedio(nombre, primerEscrito, primerParcial, segundoEscrito, segundoParcial, tercerEscrito, faltas));
     
     alumnos.forEach(alumnos => {
