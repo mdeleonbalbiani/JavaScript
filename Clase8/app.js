@@ -53,10 +53,10 @@ function validacionNombre(nombre){
     }
     return nombre.charAt(0).toUpperCase() + nombre.slice(1);
 }
-
-
-function mostrar(e) {
-    e.preventDefault()
+function textoBoton(){
+    boton1.textContent = "¡Calculado!";
+}
+function mostrar() {
     let nombre = document.getElementById("nombre").value;
     nombre = validacionNombre(nombre);
     let primerEscrito = document.getElementById("primerEscrito").value;
@@ -78,10 +78,11 @@ function mostrar(e) {
         let p1 = document.createElement("p")
         p1.textContent = `${alumnos.nombre}`
         let p2 = document.createElement("p")
-        p2.textContent = `${alumnos.promedioFinal}`
+        p2.textContent = `Promedio: ${alumnos.promedioFinal}`
         let p3 = document.createElement("p")
-        p3.textContent = `${alumnos.devolucion()}`
+        p3.textContent = `Devolución: ${alumnos.devolucion()}`
         let div1 = document.createElement("div")
+        div1.style.textAlign = "center";
         div1.appendChild(p1)
         div1.appendChild(p2)
         div1.appendChild(p3)
@@ -89,6 +90,13 @@ function mostrar(e) {
         imprimir.appendChild(div1)
     })
 }
+function funcionesBoton(e){
+    e.preventDefault()
+    //Se remueve el evento para que no se pueda calcular más que una vez
+    e.target.removeEventListener(e.type, funcionesBoton);
+    mostrar();
+    textoBoton();
+}
 
 let boton1 = document.getElementById("btn");
-boton1.addEventListener("click", mostrar);
+boton1.addEventListener("click", funcionesBoton);
