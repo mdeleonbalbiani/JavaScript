@@ -1,4 +1,3 @@
-//const submitButton = document.getElementById('submit-btn');
 const submitButton = $("#submit-btn");
 
 let timeout = null;
